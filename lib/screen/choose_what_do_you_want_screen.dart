@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:untitled/screen/login_screen.dart';
-import 'package:untitled/screen/shared_widget/widget_for_choose_what_do_yo_want_screen.dart';
+import 'package:untitled/shared_widget/widget_for_choose_what_do_yo_want_screen.dart';
 
 class ChooseWhatDoYouWantScreen extends StatelessWidget {
   const ChooseWhatDoYouWantScreen({Key? key}) : super(key: key);

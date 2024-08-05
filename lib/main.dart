@@ -7,7 +7,7 @@ import 'package:untitled/screen/splash_screen.dart';
 void main() {
   runApp( MultiProvider(
     providers: [
-      ChangeNotifierProvider(create: (_) => MyProvider()),
+      ChangeNotifierProvider(create: (_) => LoginProvider()),
     ],
     child: const MyApp(),
   ),

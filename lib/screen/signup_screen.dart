@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-import 'package:untitled/screen/signup_screen.dart';
+import 'package:untitled/screen/login_screen.dart';
 import 'package:untitled/shared_widget/text_feild.dart';
 
-class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Scaffold(
       backgroundColor: Colors.black,
       body: Column(
         //  mainAxisAlignment: MainAxisAlignment.center,
@@ -16,14 +16,14 @@ class LoginScreen extends StatelessWidget {
           Expanded(child: Container()),
           Center(
               child: Text(
-            "Welcome Back!",
-            style: TextStyle(
-                color: Colors.white,
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w800),
-          )),
+                "Create a new account!",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w800),
+              )),
           Text(
-            "please login your account",
+            "please fill in the form to continue",
             style: TextStyle(
                 color: Colors.white,
                 fontSize: 8.sp,
@@ -33,7 +33,24 @@ class LoginScreen extends StatelessWidget {
             child: Container(),
           ),
           TxtFormField(
-            hintText: 'Email/Ph number',
+            hintText: 'Full Name',
+            validator: (value) {},
+            obscureText: false,
+            isThereSearchIcon: false,
+          ),
+          SizedBox(
+            height: 2.h,
+          ),
+          TxtFormField(
+            hintText: 'Email',
+            validator: (value) {},
+            obscureText: false,
+            isThereSearchIcon: false,
+          ), SizedBox(
+            height: 2.h,
+          ),
+          TxtFormField(
+            hintText: 'Ph number',
             validator: (value) {},
             obscureText: false,
             isThereSearchIcon: false,
@@ -50,7 +67,7 @@ class LoginScreen extends StatelessWidget {
           Expanded(child: Container()),
           GestureDetector(
             onTap: () {
-              print("Login ");
+              print("signup ");
             },
             child: Container(
               height: 8.h,
@@ -60,19 +77,19 @@ class LoginScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20)),
               child: Center(
                   child: Text(
-                "LOGIN",
-                style: TextStyle(color: Colors.white, fontSize: 15.sp),
-              )),
+                    "Signup",
+                    style: TextStyle(color: Colors.white, fontSize: 15.sp),
+                  )),
             ),
           ),
           Expanded(child: Container()),
           GestureDetector(
             onTap: () {
-              print("Login with google");
+              print("Signup with google");
             },
             child: GestureDetector(
               onTap: () {
-                print("login with google");
+                print("signup with google");
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -85,7 +102,7 @@ class LoginScreen extends StatelessWidget {
                     width: 3.w,
                   ),
                   const Text(
-                    "Login with google",
+                    "signup with google",
                     style: TextStyle(color: Colors.white),
                   ),
                 ],
@@ -99,20 +116,20 @@ class LoginScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                "Don't have an account?",
+                "Have an account?",
                 style: TextStyle(color: Colors.white, fontSize: 9.sp),
               ),
               GestureDetector(
                 onTap: () {
-                  print("sign up");
+                  print("login");
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
-                        builder: (context) => const SignUpScreen()),
+                    MaterialPageRoute(builder: (context) => const LoginScreen()),
                   );
+
                 },
                 child: Text(
-                  "Signup",
+                  "Login",
                   style: TextStyle(color: Colors.red, fontSize: 9.sp),
                 ),
               )
