@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+import 'package:untitled/screen/order_food/welcome_screen.dart';
 import 'package:untitled/screen/signup_screen.dart';
 import 'package:untitled/shared_widget/text_feild.dart';
 
@@ -51,6 +52,11 @@ class LoginScreen extends StatelessWidget {
           GestureDetector(
             onTap: () {
               print("Login ");
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const WelcomeScreen()),
+              );
             },
             child: Container(
               height: 8.h,

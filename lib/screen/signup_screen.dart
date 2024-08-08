@@ -8,7 +8,7 @@ class SignUpScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: Colors.black,
       body: Column(
         //  mainAxisAlignment: MainAxisAlignment.center,
@@ -16,12 +16,12 @@ class SignUpScreen extends StatelessWidget {
           Expanded(child: Container()),
           Center(
               child: Text(
-                "Create a new account!",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w800),
-              )),
+            "Create a new account!",
+            style: TextStyle(
+                color: Colors.white,
+                fontSize: 16.sp,
+                fontWeight: FontWeight.w800),
+          )),
           Text(
             "please fill in the form to continue",
             style: TextStyle(
@@ -46,7 +46,8 @@ class SignUpScreen extends StatelessWidget {
             validator: (value) {},
             obscureText: false,
             isThereSearchIcon: false,
-          ), SizedBox(
+          ),
+          SizedBox(
             height: 2.h,
           ),
           TxtFormField(
@@ -77,9 +78,9 @@ class SignUpScreen extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20)),
               child: Center(
                   child: Text(
-                    "Signup",
-                    style: TextStyle(color: Colors.white, fontSize: 15.sp),
-                  )),
+                "Signup",
+                style: TextStyle(color: Colors.white, fontSize: 15.sp),
+              )),
             ),
           ),
           Expanded(child: Container()),
@@ -124,9 +125,9 @@ class SignUpScreen extends StatelessWidget {
                   print("login");
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const LoginScreen()),
+                    MaterialPageRoute(
+                        builder: (context) => const LoginScreen()),
                   );
-
                 },
                 child: Text(
                   "Login",

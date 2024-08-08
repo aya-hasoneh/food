@@ -40,6 +40,8 @@ dependencies:
   provider: ^6.1.2
   introduction_screen: ^3.1.12
   lottie: ^2.7.0
+  smooth_page_indicator: ^1.2.0+3
+
 
 
 

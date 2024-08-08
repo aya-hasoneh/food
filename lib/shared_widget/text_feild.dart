@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class TxtFormField extends StatelessWidget {
   String? hintText;
@@ -17,8 +18,8 @@ class TxtFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width - 70,
-      height: 45,
+      //width: MediaQuery.of(context).size.width ,
+      height:6.h,
       decoration: BoxDecoration(
           color: Colors.white, borderRadius: BorderRadius.circular(20)),
       child: TextFormField(style: TextStyle(color: Colors.white),
@@ -32,7 +33,7 @@ class TxtFormField extends StatelessWidget {
             prefixIcon: isThereSearchIcon == true
                 ? const Icon(
                     Icons.search,
-                    color: Colors.black,
+                    color: Colors.white,
                   )
                 : null,
             border: InputBorder.none,
