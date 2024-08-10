@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 import 'package:untitled/screen/order_food/home_screen.dart';
 import 'package:untitled/shared_widget/animation_arrow.dart';
+import 'package:untitled/shared_widget/bottomNavigationbar.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -44,7 +45,7 @@ class WelcomeScreen extends StatelessWidget {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const HomeScreen()),
+                              builder: (context) => const BottomNavigation()),
                         );
                       },
                       child: AnimationArrow()),
