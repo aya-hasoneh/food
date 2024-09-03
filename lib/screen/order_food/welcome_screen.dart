@@ -15,6 +15,7 @@ class WelcomeScreen extends StatelessWidget {
           Image.asset(
             "images/background.webp",
             height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
             fit: BoxFit.cover,
           ),
           Positioned(

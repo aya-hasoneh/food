@@ -3,6 +3,7 @@ import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import 'package:untitled/provider/home_provider.dart';
+import 'package:untitled/shared_widget/bottom_sgeet.dart';
 import 'package:untitled/shared_widget/card_for_item.dart';
 
 class FrequentOrder extends StatelessWidget {
@@ -31,6 +32,12 @@ class FrequentOrder extends StatelessWidget {
               itemName: homeProvider.item[index].itemName!,
               itemPrice: homeProvider.item[index].itemPrice!,
               itemImage: homeProvider.item[index].itemImage!,
+              description:  homeProvider.item[index].itemDescription!,
+              iconPressed: () {
+                bottomSheet(context,name:  homeProvider.item[index].itemName!);
+
+                print("frequent pressed icon");
+              },
             ),
           );
         },

@@ -3,6 +3,7 @@ import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import 'package:untitled/provider/home_provider.dart';
+import 'package:untitled/shared_widget/bottom_sgeet.dart';
 import 'package:untitled/shared_widget/card_for_item.dart';
 
 class FishItems extends StatelessWidget {
@@ -31,6 +32,12 @@ class FishItems extends StatelessWidget {
               itemName: homeProvider.fishItem[index].itemName!,
               itemPrice: homeProvider.fishItem[index].itemPrice!,
               itemImage: homeProvider.fishItem[index].itemImage!,
+              description:  homeProvider.fishItem[index].itemDescription!,
+              iconPressed: () {
+                bottomSheet(context,name: homeProvider.fishItem[index].itemName!,);
+
+                print("fish pressed icon");
+              },
             ),
           );
         },
