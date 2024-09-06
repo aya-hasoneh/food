@@ -36,6 +36,7 @@ class BurgerItem extends StatelessWidget {
                     itemImage: homeProvider.burgerItems[index].itemImage!,
                     description:
                         homeProvider.burgerItems[index].itemDescription!,
+                    counter: homeProvider.burgerItems[index].counter!,
                     iconPressed: () {
                       bottomSheet(context,
                           name: homeProvider.burgerItems[index].itemName!);

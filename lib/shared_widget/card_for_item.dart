@@ -9,6 +9,7 @@ Widget cardItem({
   required String description,
   context,
   required VoidCallback? iconPressed,
+  required int counter,
 }) {
   return GestureDetector(
     onTap: (){
@@ -21,6 +22,7 @@ Widget cardItem({
               itemPrice: itemPrice,
               itemImage: itemImage,
               itemDescription: description,
+              counter :counter,
             )),
       );
     },

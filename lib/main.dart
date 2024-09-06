@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
 import 'package:untitled/provider/home_provider.dart';
+import 'package:untitled/provider/item_details_provider.dart';
 import 'package:untitled/provider/provider.dart';
 import 'package:untitled/screen/splash_screen.dart';
 
@@ -10,6 +11,7 @@ void main() {
     providers: [
       ChangeNotifierProvider(create: (_) => LoginProvider()),
       ChangeNotifierProvider(create: (_) => HomeProvider()),
+      ChangeNotifierProvider(create: (_) => ItemsDetailsProvider()),
     ],
     child: const MyApp(),
   ),

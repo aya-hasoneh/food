@@ -33,6 +33,7 @@ class FrequentOrder extends StatelessWidget {
               itemPrice: homeProvider.item[index].itemPrice!,
               itemImage: homeProvider.item[index].itemImage!,
               description:  homeProvider.item[index].itemDescription!,
+              counter: homeProvider.item[index].counter!,
               iconPressed: () {
                 bottomSheet(context,name:  homeProvider.item[index].itemName!);
 
