@@ -33,7 +33,7 @@ class MeatItem extends StatelessWidget {
               itemPrice: homeProvider.meatItems[index].itemPrice!,
               itemImage: homeProvider.meatItems[index].itemImage!,
               description: homeProvider.meatItems[index].itemDescription!,
-              counter: homeProvider.meatItems[index].counter!,
+              counter: homeProvider.meatItems[index].counter,
               iconPressed: () {
                 bottomSheet(context,name:  homeProvider.meatItems[index].itemName!);
 

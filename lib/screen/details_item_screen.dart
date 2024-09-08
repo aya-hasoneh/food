@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
+import 'package:untitled/provider/home_provider.dart';
 import 'package:untitled/provider/item_details_provider.dart';
+import 'package:untitled/screen/cart_screen.dart';
 import 'package:untitled/shared_widget/calories_widget.dart';
 
 class ItemDetailScreen extends StatefulWidget {
@@ -28,6 +30,8 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
   @override
   Widget build(BuildContext context) {
     final itemDetailsProvider = Provider.of<ItemsDetailsProvider>(context);
+    final homeProvider = Provider.of<HomeProvider>(context);
+
 
     return Scaffold(
       backgroundColor: Colors.black,
@@ -247,7 +251,11 @@ class _ItemDetailScreenState extends State<ItemDetailScreen> {
                   ),
                   Expanded(child: Container()),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+
+
+
+                    },
                     child: Container(
                       height: 8.h,
                       width: 20.w,
