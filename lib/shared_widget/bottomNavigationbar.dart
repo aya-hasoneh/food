@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
+import 'package:untitled/screen/cart_screen.dart';
 import 'package:untitled/screen/order_food/home_screen.dart';
 
 class BottomNavigation extends StatefulWidget {
@@ -20,6 +21,7 @@ class _BottomNavigationState extends State<BottomNavigation> {
   List<Widget> _buildScreens() {
     return [
       HomeScreen(),
+     // CartScreen(),
      // Center(child: Text("Home Screen")),
       Center(child: Text("Search Screen")),
       Center(child: Text("Profile Screen")),

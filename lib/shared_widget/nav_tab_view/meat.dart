@@ -35,7 +35,7 @@ class MeatItem extends StatelessWidget {
               description: homeProvider.meatItems[index].itemDescription!,
               counter: homeProvider.meatItems[index].counter,
               iconPressed: () {
-                bottomSheet(context,name:  homeProvider.meatItems[index].itemName!);
+                bottomSheet(context, homeProvider.meatItems[index],name:  homeProvider.meatItems[index].itemName!);
 
                 print("meat pressed icon ${homeProvider.meatItems[index].itemName}");
               },

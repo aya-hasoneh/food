@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
+import 'package:untitled/model/item_model.dart';
 import 'package:untitled/provider/home_provider.dart';
 
 class CartScreen extends StatelessWidget {
+  final List<Items> cart;
 
+  CartScreen({required this.cart});
 
   @override
   Widget build(BuildContext context) {
@@ -43,17 +46,19 @@ class CartScreen extends StatelessWidget {
                     "Order summery",
                     style: TextStyle(color: Colors.white),
                   ),
+                  homeProvider.cart.isEmpty ?  Center(child: Text("empty list",style: TextStyle(color: Colors.white),)):
                   Container(
                     height: 40.h,
                     width: MediaQuery.of(context).size.width,
                     child: ListView.builder(
-                        itemCount: homeProvider.cart.length,
+                        itemCount: cart.length,
                         itemBuilder: (context, index) {
-                          return cartItemCard(
-                            itemImage: homeProvider.cart[index].itemImage!,
-                            itemPrice: homeProvider.cart[index].itemPrice!,
-                            itemName: homeProvider.cart[index].itemName!,
-                            qty: homeProvider.cart[index].counter,
+                          return
+                           cartItemCard(
+                            itemImage:cart[index].itemImage!,
+                            itemPrice: cart[index].itemPrice!,
+                            itemName: cart[index].itemName!,
+                            qty: cart[index].counter,
                           );
                         }),
                   )

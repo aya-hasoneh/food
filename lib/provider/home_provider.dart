@@ -165,29 +165,44 @@ class HomeProvider extends ChangeNotifier {
   ];
   List<Items> cart = [];
 
-  addToCart(Items items, context) {
-    notifyListeners();
+  // addToCart(Items items, context) {
+  //   notifyListeners();
+  //
+  //
+  //   if (items.itemName!.isEmpty) {
+  //     cart.add(Items(
+  //         itemName: items.itemName,
+  //         itemPrice: items.itemPrice,
+  //         itemDescription: items.itemDescription,
+  //         itemImage: items.itemImage,
+  //     counter: items.counter
+  //     ));
+  //
+  //   }
+  //
+  //
+  // }
+  void addToCart({required Items item}) {
 
-
-    if (items.itemName!.isEmpty) {
-      cart.add(Items(
-          itemName: items.itemName,
-          itemPrice: items.itemPrice,
-          itemDescription: items.itemDescription,
-          itemImage: items.itemImage,
-      counter: items.counter
-      ));
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) =>  CartScreen(
-
-        )),
+      var existingItem = cart.firstWhere(
+            (cartItem) => cartItem.itemName == item.itemName,
+        orElse: () => Items(itemName: '', itemPrice: 0, itemDescription: '', itemImage: '', counter: 0),
       );
-    }
 
-
+      if (existingItem.itemName!.isEmpty) {
+        // Adding item to cart
+        cart.add(Items(
+          itemName: item.itemName,
+          itemPrice: item.itemPrice,
+          itemDescription: item.itemDescription,
+          itemImage: item.itemImage,
+          counter: 1, // Setting the initial counter to 1
+        ));
+      } else {
+        existingItem.counter += 1; // Increasing the counter if the item already exists
+      }
+ notifyListeners();
   }
-
   void showCart(context) {
     showDialog(
       context: context,

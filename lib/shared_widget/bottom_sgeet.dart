@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sizer/sizer.dart';
+import 'package:untitled/model/item_model.dart';
+import 'package:untitled/provider/home_provider.dart';
+import 'package:untitled/screen/cart_screen.dart';
 
-bottomSheet(context, { required String name}){
+bottomSheet(context,Items items, { required String name , }){
   return   showModalBottomSheet(
     context: context,
     builder: (BuildContext context) {
+      final homeProvider = Provider.of<HomeProvider>(context);
+
       return Container(
           decoration: BoxDecoration(
               color: Colors.black,
@@ -29,18 +35,29 @@ bottomSheet(context, { required String name}){
                 style: TextStyle(color: Colors.white),
               ),
               Expanded(child: Container()),
-              Container(
-                height: 10.h,
-                width: 20.w,
-                decoration: BoxDecoration(
-                    color: Colors.grey[900],
-                    borderRadius:
-                    BorderRadius.circular(20)),
-                child: Center(
-                    child: Text(
-                      'Next',
-                      style: TextStyle(color: Colors.white),
-                    )),
+              GestureDetector(
+                onTap: (){
+                 homeProvider.addToCart(item: items);
+                  print("add to the basket");
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) =>  CartScreen(cart: homeProvider.cart,
+
+                  )),
+                );},
+                child: Container(
+                  height: 10.h,
+                  width: 20.w,
+                  decoration: BoxDecoration(
+                      color: Colors.grey[900],
+                      borderRadius:
+                      BorderRadius.circular(20)),
+                  child: Center(
+                      child: Text(
+                        'Next',
+                        style: TextStyle(color: Colors.white),
+                      )),
+                ),
               ),
               SizedBox(
                 width: 5.w,

@@ -33,10 +33,10 @@ class FishItems extends StatelessWidget {
               itemPrice: homeProvider.fishItem[index].itemPrice!,
               itemImage: homeProvider.fishItem[index].itemImage!,
               description:  homeProvider.fishItem[index].itemDescription!,
-              counter: homeProvider.fishItem[index].counter!,
+              counter: homeProvider.fishItem[index].counter,
 
               iconPressed: () {
-                bottomSheet(context,name: homeProvider.fishItem[index].itemName!,);
+                bottomSheet(context,homeProvider.fishItem[index],name: homeProvider.fishItem[index].itemName!,);
 
                 print("fish pressed icon");
               },

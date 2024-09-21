@@ -34,10 +34,10 @@ class ChickenItem extends StatelessWidget {
                     itemPrice: homeProvider.chickenItem[index].itemPrice!,
                     itemImage: homeProvider.chickenItem[index].itemImage!,
                     description: homeProvider.chickenItem[index].itemDescription!,
-                    counter: homeProvider.chickenItem[index].counter!,
+                    counter: homeProvider.chickenItem[index].counter,
 
                     iconPressed: () {
-                      bottomSheet(context,name: homeProvider.chickenItem[index].itemName!);
+                      bottomSheet(context,homeProvider.chickenItem[index],name: homeProvider.chickenItem[index].itemName!);
 
                       print("chicken pressed icon");
                     },

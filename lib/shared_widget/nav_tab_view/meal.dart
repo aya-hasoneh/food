@@ -33,9 +33,9 @@ class MealItem extends StatelessWidget {
               itemPrice: homeProvider.mealItem[index].itemPrice!,
               itemImage: homeProvider.mealItem[index].itemImage!,
               description:  homeProvider.mealItem[index].itemDescription!,
-              counter: homeProvider.mealItem[index].counter!,
+              counter: homeProvider.mealItem[index].counter,
               iconPressed: () {
-                bottomSheet(context,name: homeProvider.mealItem[index].itemName!);
+                bottomSheet(context,homeProvider.mealItem[index],name: homeProvider.mealItem[index].itemName!);
 
                 print("meal pressed icon");
               },
